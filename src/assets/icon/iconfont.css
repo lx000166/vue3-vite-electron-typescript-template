@@ -1,0 +1,155 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 2915557 */
+  src: url('iconfont.woff2?t=1637121400670') format('woff2'),
+       url('iconfont.woff?t=1637121400670') format('woff'),
+       url('iconfont.ttf?t=1637121400670') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-settings:before {
+  content: "\e68a";
+}
+
+.icon-appstore:before {
+  content: "\e75a";
+}
+
+.icon-appstoreo:before {
+  content: "\e603";
+}
+
+.icon-github-fill:before {
+  content: "\e885";
+}
+
+.icon-chart-scatter-plot:before {
+  content: "\e78e";
+}
+
+.icon-chart-line:before {
+  content: "\e790";
+}
+
+.icon-chart-bar:before {
+  content: "\e791";
+}
+
+.icon-appstoreadd:before {
+  content: "\e8eb";
+}
+
+.icon-ts-tubiao_component:before {
+  content: "\e71a";
+}
+
+.icon-github:before {
+  content: "\e6b7";
+}
+
+.icon-setting:before {
+  content: "\e785";
+}
+
+.icon-chart:before {
+  content: "\e623";
+}
+
+.icon-github1:before {
+  content: "\eba0";
+}
+
+.icon-tuya_huabanfuben:before {
+  content: "\e600";
+}
+
+.icon-shouhui:before {
+  content: "\e618";
+}
+
+.icon-daohangshouhui:before {
+  content: "\e607";
+}
+
+.icon-moduanzuoyouzhankai_o:before {
+  content: "\eb99";
+}
+
+.icon-shangxiazhankai_o:before {
+  content: "\eb9a";
+}
+
+.icon-zuidahua:before {
+  content: "\e621";
+}
+
+.icon-2zuixiaohua-1:before {
+  content: "\e65a";
+}
+
+.icon-2zuixiaohua-2:before {
+  content: "\e65b";
+}
+
+.icon-3zuidahua-1:before {
+  content: "\e65d";
+}
+
+.icon-close:before {
+  content: "\e629";
+}
+
+.icon--zuixiaohua:before {
+  content: "\e622";
+}
+
+.icon-window-max_line:before {
+  content: "\e695";
+}
+
+.icon-Close:before {
+  content: "\e92f";
+}
+
+.icon-Close1:before {
+  content: "\e619";
+}
+
+.icon-zuidahua1:before {
+  content: "\e651";
+}
+
+.icon-close1:before {
+  content: "\e66b";
+}
+
+.icon-64:before {
+  content: "\e6b6";
+}
+
+.icon-close-bold:before {
+  content: "\e685";
+}
+
+.icon-24full_screen_01:before {
+  content: "\e633";
+}
+
+.icon-zuixiaohua:before {
+  content: "\e6b9";
+}
+
+.icon-zuidahua2:before {
+  content: "\e6ba";
+}
+
+.icon-zuixiaohua1:before {
+  content: "\e67b";
+}
+

@@ -1,0 +1,63 @@
+body {
+  --S-Width: 15.25rem;
+  --S-Width-: -15.25rem;
+}
+
+.Sleft0 {
+  left: 0rem;
+}
+
+.Sleft {
+  left: var(--S-Width-);
+}
+
+.Swidth {
+  width: var(--S-Width);
+}
+
+.Spadding {
+  padding-left: var(--S-Width);
+}
+
+.Sopacity {
+  opacity: 0;
+}
+
+.Sopacity:hover {
+  opacity: 1;
+}
+
+
+.Srotate180 {
+  transform: rotate(180deg);
+}
+
+.Stransition {
+  transition-timing-function: cubic-bezier(0.57, 0.41, 0.13, 0.85);
+  transition-duration: .6s;
+  transition-property: padding, left, opacity;
+
+}
+
+
+.sidebar-wapper {
+  transition-property: left;
+
+  .sidebar {
+    box-shadow: 1px 1px 5px #00000017;
+
+    .menu-item:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    .menu-item-active {
+      background-color: rgba(12, 32, 37, 0.15);
+      text-shadow: 0 0 15px var(--end-color-real);
+    }
+  }
+
+  .sidebar:hover {
+    transform: scale(1.007);
+    box-shadow: 1px 1px 15px #00000017;
+  }
+}

@@ -1,0 +1,31 @@
+/*
+ * @Author: lx000
+ * @Date: 2021-11-17 11:51:31
+ * @LastEditTime: 2021-11-18 10:49:37
+ * @Description: 全局样式
+ */
+
+html body {
+  font-family: 'OperatorMono', 'MiMeng', '苹方-简', 'Microsoft YaHei',
+    sans-serif, monospace;
+  /*  ? 优化字体显示 */
+  -webkit-font-smoothing: antialiased;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* 可拖动 */
+.drag {
+  -webkit-app-region: drag;
+}
+
+/* 不可拖动 */
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/* 文字不可被选择 */
+.no-select {
+  user-select: none;
+}

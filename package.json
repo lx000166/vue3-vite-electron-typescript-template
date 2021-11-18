@@ -1,0 +1,76 @@
+{
+  "name": "vue3-electron-ts-template",
+  "version": "1.0.1",
+  "description": "vue3,vite2,typescript,electron template",
+  "author": "lx000",
+  "main": "output/build/main.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "kill-port 3920 && concurrently -k \"vite\" \"wait-on tcp:3920 && npm-run-all build:tsc start:ect\"",
+    "start:ect": "cross-env NODE_ENV=development electron ./output/build/main.js",
+    "build": "npm-run-all build:vue build:tsc build:all",
+    "build:vue": "vue-tsc --noEmit && vite build",
+    "build:tsc": "tsc -p tsconfig.e.json",
+    "build:all": "electron-builder --mac  --windows",
+    "build:mac": "electron-builder --mac",
+    "build:win": "electron-builder --windows",
+    "preview": "cross-env NODE_ENV=production electron ./output/build/main.js"
+  },
+  "dependencies": {
+    "@vueuse/core": "^6.9.0",
+    "echarts": "^5.2.2",
+    "normalize.css": "^8.0.1",
+    "vue": "^3.2.16",
+    "vue-router": "^4.0.11"
+  },
+  "devDependencies": {
+    "@types/echarts": "^4.9.11",
+    "@vitejs/plugin-vue": "^1.9.3",
+    "@vue/compiler-sfc": "^3.2.21",
+    "ant-design-vue": "^2.2.8",
+    "autoprefixer": "^10.4.0",
+    "concurrently": "^6.3.0",
+    "cross-env": "^7.0.3",
+    "electron": "^15.3.0",
+    "electron-builder": "^22.13.1",
+    "kill-port": "^1.6.1",
+    "less": "^4.1.2",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.19",
+    "typescript": "^4.4.3",
+    "unplugin-vue-components": "^0.17.1",
+    "vite": "^2.6.4",
+    "vue-tsc": "^0.3.0",
+    "wait-on": "^6.0.0"
+  },
+  "build": {
+    "appId": "com.lx000-website.electron-vue3-tpm",
+    "productName": "后台管理",
+    "copyright": "Copyright © 2021 <your-name>",
+    "directories": {
+      "output": "output/app"
+    },
+    "win": {
+      "icon": "public/cccs.icns",
+      "target": [
+        "nsis",
+        "zip",
+        "7z"
+      ]
+    },
+    "files": [
+      "!node_modules",
+      "output/dist/**/*",
+      "output/build/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.utilities",
+      "icon": "public/cccs.icns"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

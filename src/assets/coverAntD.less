@@ -1,0 +1,31 @@
+/*
+ * @Author: lx000
+ * @Date: 2021-11-14 19:19:02
+ * @LastEditTime: 2021-11-17 20:50:40
+ * @Description: 覆盖antd样式
+ */
+body {
+  .ant-dropdown-menu {
+    // 菜单背景色
+    background: var(--start-color-real);
+
+    .ant-dropdown-menu-item,
+    .ant-dropdown-menu-submenu-title {
+      padding: 0rem 0.75rem;
+      border-radius: .2rem;
+      color: var(--end-color-real); // 菜单文字颜色
+      font-size: 0.75rem;
+    }
+
+    .ant-dropdown-menu-item:hover,
+    .ant-dropdown-menu-submenu-title:hover {
+      background-color: #f5f5f51a;
+    }
+
+    .ant-dropdown-menu-item .ant-dropdown-menu-submenu-arrow,
+    .ant-dropdown-menu-submenu-title .ant-dropdown-menu-submenu-arrow {
+      display: none;
+    }
+  }
+
+}
