@@ -1,16 +1,21 @@
 /*
  * @Author: lx000
  * @Date: 2021-11-11 12:08:22
- * @LastEditTime: 2021-11-18 17:18:40
+ * @LastEditTime: 2021-11-18 23:11:20
  * @Description: 描述
  */
 import type { RouteRecordRaw } from "vue-router";
 
 interface metaRequired {
+  /**排序(决定路由过渡滚动方向) */
   sort: number;
+  /**起始颜色(背景上方颜色) */
   start: number[];
+  /**结束颜色 (背景下方颜色) */
   end: number[];
+  /**侧边栏显示名称 */
   name: string;
+  /**侧边栏图标 */
   icon: string;
 }
 type customRoute = {
@@ -20,11 +25,14 @@ type customRoute = {
    */
   path: `/${string}`;
   /**
+   * 侧边栏导航通过传递name实现
+   */
+  name: string;
+  /**
    * @required 必须
    * @Description 用于切换路由时比对sort大小来动态设置路由切换动画
    */
   meta: metaRequired;
-  // children?: route[];
 };
 type route = RouteRecordRaw & customRoute;
 

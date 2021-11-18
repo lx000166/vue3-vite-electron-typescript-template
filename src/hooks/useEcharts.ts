@@ -1,17 +1,17 @@
 /*
  * @Author: lx000
  * @Date: 2021-10-18 10:49:49
- * @LastEditTime: 2021-11-18 17:12:35
+ * @LastEditTime: 2021-11-18 23:17:21
  * @Description: hooks 生成echarts实例并挂载至dom
  */
 import { nextTick, unref, onBeforeUnmount } from "vue";
-import type { EChartsOption } from "echarts";
 import type { Ref } from "vue";
+import type { EChartsOption } from "echarts";
 
 // ? 导入echarts实例
 import echarts from "@/utils/echarts";
 // ? 延迟函数
-import { dealy } from "@/hooks/useTimeOut";
+import { dealy } from "@/utils/dealy";
 
 /**
  * @func: useEcharts
@@ -39,7 +39,7 @@ export function useEcharts(element: Ref<HTMLElement | null>) {
     chartInstance = echarts.init(unref(element as Ref<HTMLElement>));
     setResize();
   };
-  const setOptions = (options: any) => {
+  const setOptions = (options: EChartsOption) => {
     nextTick(async () => {
       await dealy(30);
       if (!element.value) {

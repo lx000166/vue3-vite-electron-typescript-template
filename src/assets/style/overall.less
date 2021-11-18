@@ -1,9 +1,14 @@
 /*
  * @Author: lx000
  * @Date: 2021-11-17 11:51:31
- * @LastEditTime: 2021-11-18 17:29:31
+ * @LastEditTime: 2021-11-19 00:41:14
  * @Description: 全局样式
  */
+html {
+  --start-transition-color: rgba(53, 91, 124, 255);
+  --end-transition-color: rgba(7, 51, 58, 255);
+  --sidebar-width: 15rem;
+}
 
 html body {
   font-family: "OperatorMono", "MiMeng", "苹方-简", "Microsoft YaHei", sans-serif, monospace;
@@ -13,9 +18,11 @@ html body {
   border-radius: 0.5rem;
   overflow: hidden;
 }
+
 #app {
   animation: onStart 0.6s linear;
 }
+
 @keyframes onStart {
   0% {
     opacity: 0;
@@ -39,4 +46,28 @@ html body {
 /* 文字不可被选择 */
 .no-select {
   user-select: none;
+}
+
+.box-border {
+  box-sizing: border-box;
+}
+
+.h-100vh {
+  height: 100vh;
+}
+
+.w-100vh {
+  width: 100vw;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.fixed {
+  position: fixed;
+}
+
+font-size14 {
+  font-size: 0.875rem;
 }

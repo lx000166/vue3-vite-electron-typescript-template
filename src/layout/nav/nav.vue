@@ -1,7 +1,7 @@
 <!--
  * @Author: lx000
  * @Date: 2021-11-09 19:25:56
- * @LastEditTime: 2021-11-18 12:12:49
+ * @LastEditTime: 2021-11-19 00:29:05
  * @Description: 描述
 -->
 <script setup lang="ts">
@@ -10,8 +10,17 @@
 </script>
 
 <template>
-  <nav id="nav" class="drag fixed flex justify-between top-0 z-50 w-screen">
+  <nav id="nav" class="drag fixed">
     <navMenu />
     <navIcon />
   </nav>
 </template>
+<style scoped>
+  #nav {
+    top: 0;
+    z-index: 20;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+  }
+</style>

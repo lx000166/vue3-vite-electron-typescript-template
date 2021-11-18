@@ -1,10 +1,11 @@
 /*
  * @Author: lx000
  * @Date: 2021-10-18 09:53:06
- * @LastEditTime: 2021-11-18 17:09:36
+ * @LastEditTime: 2021-11-18 23:15:37
  * @Description: 导入echarts组件
  */
 import * as echarts from "echarts/core";
+import type { EChartsOption } from "echarts";
 
 import { BarChart, LineChart, PieChart, MapChart, PictorialBarChart, RadarChart } from "echarts/charts";
 
@@ -50,7 +51,7 @@ echarts.use([
   CalendarComponent,
   GraphicComponent
 ]);
-const chartDefault_loop = {
+const chartDefault_loop: EChartsOption = {
   title: {
     text: "Customized Pie",
     left: "center",

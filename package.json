@@ -20,6 +20,7 @@
     "@vueuse/core": "^6.9.0",
     "echarts": "^5.2.2",
     "normalize.css": "^8.0.1",
+    "pinia": "^2.0.3",
     "vue": "^3.2.16",
     "vue-router": "^4.0.11"
   },

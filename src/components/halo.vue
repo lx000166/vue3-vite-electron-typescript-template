@@ -1,12 +1,12 @@
 <!--
  * @Author: lx000
  * @Date: 2021-11-17 16:05:13
- * @LastEditTime: 2021-11-18 15:58:04
+ * @LastEditTime: 2021-11-19 00:00:49
  * @Description: 动态光环组件
 -->
 <template>
-  <div class="halo inline-block">
-    <div class="haloTextWapper text-4xl fixed inline-block"><span class="haloText">WELCOME</span></div>
+  <div class="halo">
+    <div class="haloTextWapper fixed"><span class="haloText">WELCOME</span></div>
 
     <div class="circle"></div>
     <svg>
@@ -39,12 +39,14 @@
     height: 400px;
     position: relative;
     display: flex;
+    font-size: 2.25rem /* 36px */;
     align-items: center;
     justify-content: center;
   }
 
   .haloTextWapper {
     filter: url(#text) blur(0px);
+    display: inline-block;
   }
   .haloText {
     color: #fff;
