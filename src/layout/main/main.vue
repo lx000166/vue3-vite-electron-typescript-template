@@ -1,18 +1,16 @@
 <!--
  * @Author: lx000
  * @Date: 2021-11-15 13:35:36
- * @LastEditTime: 2021-11-18 00:41:32
+ * @LastEditTime: 2021-11-18 15:37:30
  * @Description:
 
 -->
 <script lang="ts" setup>
-import "@/assets/routerKeyframes.css";
-import { sidebarSwitch, isShow } from "@/hooks/useSidebar";
-
+  import "@/assets/routerKeyframes.css";
 </script>
 <template>
-  <div class="main-container h-screen w-screen Stransition" :class="{ 'Spadding': !isShow }">
-    <div class="main-wapper h-screen relative">
+  <div class="main-container h-screen w-screen pl-60">
+    <div class="main-wapper h-screen relative p-7">
       <router-view v-slot="{ Component, route }">
         <transition :name="route.meta.transition">
           <component :is="Component" :key="route.path" />
@@ -21,5 +19,3 @@ import { sidebarSwitch, isShow } from "@/hooks/useSidebar";
     </div>
   </div>
 </template>
-
-
