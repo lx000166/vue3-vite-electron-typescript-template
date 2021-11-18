@@ -1,7 +1,7 @@
 /*
  * @Author: lx000
  * @Date: 2021-11-11 12:08:22
- * @LastEditTime: 2021-11-18 11:34:31
+ * @LastEditTime: 2021-11-18 16:01:05
  * @Description: 描述
  */
 import { route } from "~/extend-route";
@@ -14,7 +14,7 @@ const sidebarRoutes: route[] = [
       sort: 1,
       start: [170, 74, 106],
       end: [7, 51, 58],
-      name: "组件",
+      name: "WELCOME",
       icon: "icon-ts-tubiao_component"
     },
     component: () => import("@/view/page-1.vue")
@@ -26,7 +26,7 @@ const sidebarRoutes: route[] = [
       sort: 2,
       start: [61, 81, 80],
       end: [222, 203, 165],
-      name: "图表",
+      name: "CHART",
       icon: "icon-chart-line"
     },
     component: () => import("@/view/page-2.vue")
@@ -39,7 +39,7 @@ const sidebarRoutes: route[] = [
       sort: 3,
       start: [41, 49, 73],
       end: [126, 139, 145],
-      name: "引用商店",
+      name: "App Store",
       icon: "icon-appstoreadd"
     },
     component: () => import("@/view/page-3.vue")

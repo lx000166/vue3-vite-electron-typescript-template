@@ -1,7 +1,7 @@
 /*
  * @Author: lx000
  * @Date: 2021-11-17 11:51:31
- * @LastEditTime: 2021-11-18 15:31:08
+ * @LastEditTime: 2021-11-18 15:41:38
  * @Description: 全局样式
  */
 
@@ -12,9 +12,6 @@ html body {
   background-color: transparent;
   border-radius: 0.5rem;
   overflow: hidden;
-}
-#app {
-  opacity: 0;
 }
 
 /* 可拖动 */
