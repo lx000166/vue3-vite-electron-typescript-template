@@ -1,10 +1,32 @@
 /*
  * @Author: lx000
  * @Date: 2021-11-11 12:08:22
- * @LastEditTime: 2021-11-18 16:01:05
+ * @LastEditTime: 2021-11-18 17:18:40
  * @Description: 描述
  */
-import { route } from "~/extend-route";
+import type { RouteRecordRaw } from "vue-router";
+
+interface metaRequired {
+  sort: number;
+  start: number[];
+  end: number[];
+  name: string;
+  icon: string;
+}
+type customRoute = {
+  /**
+   * @Description `path` 必须使用绝对路径以避免递归路由时的key冲突
+   * @example  路径 path: "/notes" 的子路由使用 path: "/notes/note1" 而不是 path: "note1".
+   */
+  path: `/${string}`;
+  /**
+   * @required 必须
+   * @Description 用于切换路由时比对sort大小来动态设置路由切换动画
+   */
+  meta: metaRequired;
+  // children?: route[];
+};
+type route = RouteRecordRaw & customRoute;
 
 const sidebarRoutes: route[] = [
   {
@@ -39,7 +61,7 @@ const sidebarRoutes: route[] = [
       sort: 3,
       start: [41, 49, 73],
       end: [126, 139, 145],
-      name: "App Store",
+      name: "笔记",
       icon: "icon-appstoreadd"
     },
     component: () => import("@/view/page-3.vue")

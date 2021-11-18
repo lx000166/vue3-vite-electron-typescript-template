@@ -1,7 +1,7 @@
 /*
  * @Author: lx000
  * @Date: 2021-11-17 11:51:31
- * @LastEditTime: 2021-11-18 15:41:38
+ * @LastEditTime: 2021-11-18 17:29:31
  * @Description: 全局样式
  */
 
@@ -12,6 +12,18 @@ html body {
   background-color: transparent;
   border-radius: 0.5rem;
   overflow: hidden;
+}
+#app {
+  animation: onStart 0.6s linear;
+}
+@keyframes onStart {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 /* 可拖动 */
