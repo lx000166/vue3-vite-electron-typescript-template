@@ -1,7 +1,7 @@
 <!--
  * @Author: lx000
  * @Date: 2021-11-09 15:58:10
- * @LastEditTime: 2021-11-18 23:56:10
+ * @LastEditTime: 2021-11-19 00:54:45
  * @Description: 描述
 -->
 <script setup lang="ts">
@@ -10,7 +10,7 @@
   import Main from "@/layout/main/main.vue";
 </script>
 <template>
-  <div class="layout-wapper h-100vh w-100vh">
+  <div class="layout-wapper h-100vh w-100vw">
     <!-- nav -->
     <Nav />
     <!-- sidebar -->
