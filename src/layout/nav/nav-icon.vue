@@ -1,7 +1,7 @@
 <!--
  * @Author: lx000
  * @Date: 2021-11-12 17:27:12
- * @LastEditTime: 2021-11-19 00:26:26
+ * @LastEditTime: 2021-11-19 10:06:53
  * @Description: 描述
 -->
 <script setup lang="ts">
@@ -25,12 +25,14 @@
   .iconBox > span {
     display: inline-block;
     text-align: center;
-    height: 1.75rem;
-    width: 1.75rem;
-    line-height: 1.75rem;
+    height: var(--nav-height);
+    width: var(--nav-height);
+    line-height: var(--nav-height);
+    transition: transform 0.3s, text-shadow 0.3s;
   }
   .iconBox > span:hover {
-    color: rgba(190, 24, 93, 1);
+    transform: scale(1.1);
+    text-shadow: 0 0 4px var(--end-transition-color);
   }
   .iconBox > i {
     padding: 0;

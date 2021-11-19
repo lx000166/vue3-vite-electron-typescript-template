@@ -1,13 +1,14 @@
 <!--
  * @Author: lx000
  * @Date: 2021-11-04 10:11:30
- * @LastEditTime: 2021-11-18 22:23:40
+ * @LastEditTime: 2021-11-19 11:32:03
  * @Description: 描述
 -->
 <script setup lang="ts">
   import { ref, computed, watch, watchEffect } from "vue";
   import { useRoute } from "vue-router";
   import { useTransition } from "@vueuse/core";
+  import ContentMenu from "@/components/contentMenu.vue";
   const route = useRoute();
 
   const start = ref([170, 74, 106]);
@@ -38,5 +39,8 @@
   });
 </script>
 <template>
-  <router-view />
+  <ContentMenu>
+    <router-view />
+  </ContentMenu>
+  <!-- 右键菜单 -->
 </template>

@@ -1,7 +1,7 @@
 /*
  * @Author: lx000
  * @Date: 2021-11-05 10:36:13
- * @LastEditTime: 2021-11-19 01:02:44
+ * @LastEditTime: 2021-11-19 16:06:07
  * @Description: 菜单相关配置
  */
 import { Menu, ipcMain, app } from "electron";

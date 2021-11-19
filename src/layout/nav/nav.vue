@@ -1,7 +1,7 @@
 <!--
  * @Author: lx000
  * @Date: 2021-11-09 19:25:56
- * @LastEditTime: 2021-11-19 00:29:05
+ * @LastEditTime: 2021-11-19 09:23:55
  * @Description: 描述
 -->
 <script setup lang="ts">
@@ -21,6 +21,7 @@
     z-index: 20;
     width: 100vw;
     display: flex;
+    height: var(--nav-height);
     justify-content: space-between;
   }
 </style>

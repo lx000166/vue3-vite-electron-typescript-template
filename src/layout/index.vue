@@ -1,7 +1,7 @@
 <!--
  * @Author: lx000
  * @Date: 2021-11-09 15:58:10
- * @LastEditTime: 2021-11-19 00:54:45
+ * @LastEditTime: 2021-11-19 11:20:23
  * @Description: 描述
 -->
 <script setup lang="ts">
@@ -17,6 +17,7 @@
     <Sidebar />
     <!-- main -->
     <Main />
+    // ? 右键菜单
   </div>
 </template>
 <style>
