@@ -1,7 +1,7 @@
 /*
  * @Author: lx000
  * @Date: 2021-11-05 10:21:41
- * @LastEditTime: 2021-11-19 15:57:12
+ * @LastEditTime: 2021-11-19 16:07:13
  * @Description: createWindow
  */
 import { BrowserWindow } from "electron";
@@ -25,7 +25,7 @@ function createWindow() {
     transparent: true, // * app 背景透明
     hasShadow: false, // * app 边框阴影
     show: false, // 启动窗口时隐藏,直到渲染进程加载完成「ready-to-show 监听事件」 再显示窗口,防止加载时闪烁
-    // resizable: false, // 禁止手动修改窗口尺寸
+    resizable: false, // 禁止手动修改窗口尺寸
     webPreferences: {
       // 加载脚本
       preload: path.join(__dirname, "..", "preload")
