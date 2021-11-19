@@ -1,7 +1,7 @@
 /*
  * @Author: lx000
  * @Date: 2021-11-19 14:02:43
- * @LastEditTime: 2021-11-19 16:56:49
+ * @LastEditTime: 2021-11-19 17:04:21
  * @Description: 渲染进程的右键菜单
  */
 
@@ -19,24 +19,28 @@ export function onContextMenu() {
   });
 }
 
+// 打开控制台
+const openDevTool = (e: Electron.IpcMainEvent) => e.sender.openDevTools();
+
+// 全屏/推出全屏
+/**
+ * 由于electron的某个bug,无边框透明窗口在win上isSetFullScreen总是返回false
+ * 所以在windows上是否全屏通过在当前窗口实例上挂载变量的方式来判断
+ */
 type route = extendWindow & Electron.BrowserWindow;
 interface extendWindow {
   isMax: boolean | null | undefined;
 }
-const openDevTool = (e: Electron.IpcMainEvent) => e.sender.openDevTools();
 const fullScreen = async (e: Electron.IpcMainEvent) => {
   const window = BrowserWindow.fromWebContents(e.sender) as route; // 获取窗口实例
-  const isMac = process.platform == "darwin";
+  const isMac = process.platform == "darwin"; // 判断是否是mac
   if (isMac) {
+    // mac进入/退出简单全屏模式
     const isSimpleFS = window.isSimpleFullScreen();
     window.setSimpleFullScreen(!isSimpleFS);
-    console.log(isSimpleFS);
   } else {
-    if (window.isMax) {
-      window.setFullScreen(false);
-    } else {
-      window.setFullScreen(true);
-    }
+    // win进入/退出全屏模式
+    window.isMax ? window.setFullScreen(false) : window.setFullScreen(true);
     window.isMax = !window.isMax;
   }
 };
