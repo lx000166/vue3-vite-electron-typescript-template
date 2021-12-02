@@ -1,7 +1,7 @@
 /*
  * @Author: lx000
  * @Date: 2021-11-09 15:55:45
- * @LastEditTime: 2021-11-18 11:34:41
+ * @LastEditTime: 2021-12-02 15:56:44
  * @Description: 描述
  */
 import { createRouter, createWebHashHistory, RouteRecordRaw, Router } from "vue-router";
@@ -19,8 +19,14 @@ const router: Router = createRouter({
   history: createWebHashHistory(),
   routes: routes
 });
+
 router.afterEach((to, from) => {
-  (to.meta.sort as number) > (from.meta.sort as number) ? (to.meta.transition = "totop") : (to.meta.transition = "tobottom");
+  // 设置过渡方向
+  if (to.meta.sort && from.meta.sort) {
+    (to.meta.sort as number) > (from.meta.sort as number)
+      ? (to.meta.transition = "totop")
+      : (to.meta.transition = "tobottom");
+  }
 });
 
 export default router;

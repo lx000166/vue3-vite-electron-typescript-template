@@ -1,7 +1,7 @@
 <!--
  * @Author: lx000
  * @Date: 2021-11-10 11:36:51
- * @LastEditTime: 2021-11-19 00:02:57
+ * @LastEditTime: 2021-12-01 11:29:08
  * @Description: 描述 
 -->
 <script lang="ts" setup>
@@ -15,7 +15,12 @@
 <template>
   <div class="sidebar-wapper box-border h-100vh fixed">
     <div class="sidebar">
-      <div :key="item.path" v-for="item of sidebarRoutes" @click="goPage(item.name)" class="menu-item" :class="{ 'menu-item-active': route.name == item.name }">
+      <div
+        :key="item.path"
+        v-for="item of sidebarRoutes"
+        @click="goPage(item.name)"
+        class="menu-item"
+        :class="{ 'menu-item-active': route.name == item.name }">
         <i class="iconfont" :class="item.meta.icon"></i>
         <span class="no-select">{{ item.meta.name }}</span>
       </div>
@@ -58,7 +63,7 @@
       }
       .menu-item-active {
         background-color: rgba(12, 32, 37, 0.15);
-        text-shadow: 0 0 15px var(--end-transition-color);
+        text-shadow: 0 0 0.9rem var(--end-transition-color);
       }
     }
   }

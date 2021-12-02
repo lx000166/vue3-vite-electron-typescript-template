@@ -18,6 +18,6 @@ yarn build  // 打包mac和win
 or
 yarn build:vue // 打包vue
 yarn build:tsc // 将electron的ts代码编译为js
-yarn build:mac / yarn build:mac    // 打包app
+yarn build:mac / yarn build:win    // 打包app
 ````
 

@@ -1,14 +1,15 @@
 {
   "name": "vue3-vite-electron-typescript-template",
   "version": "1.0.3",
-  "description": "vue3,vite2,typescript,electron beautiful template",
+  "description": "vue3,vite,typescript,electron beautiful template",
   "author": "lx000",
   "main": "output/build/main.js",
   "license": "MIT",
   "scripts": {
-    "start": "kill-port 3920 && concurrently -k \"vite\" \"wait-on tcp:3920 && npm-run-all build:tsc start:ect\"",
+    "start": "kill-port 3920 && concurrently -k \"vite\" \"wait-on tcp:3920 && yarn watch\"",
+    "watch": "tsc-watch --noClear -p tsconfig.e.json --onSuccess \"yarn start:ect\"",
     "start:ect": "cross-env NODE_ENV=development electron ./output/build/main.js",
-    "build": "npm-run-all build:vue build:tsc build:all",
+    "build": "yarn build:vue && yarn build:tsc && yarn build:all",
     "build:vue": "vue-tsc --noEmit && vite build",
     "build:tsc": "tsc -p tsconfig.e.json",
     "build:all": "electron-builder --mac  --windows",
@@ -18,12 +19,14 @@
   },
   "dependencies": {
     "@vueuse/core": "^6.9.0",
+    "animejs": "^3.2.1",
     "echarts": "^5.2.2",
     "normalize.css": "^8.0.1",
     "vue": "^3.2.16",
     "vue-router": "^4.0.11"
   },
   "devDependencies": {
+    "@types/animejs": "^3.1.4",
     "@types/echarts": "^4.9.11",
     "@vitejs/plugin-vue": "^1.9.3",
     "@vue/compiler-sfc": "^3.2.21",
@@ -35,6 +38,7 @@
     "kill-port": "^1.6.1",
     "less": "^4.1.2",
     "npm-run-all": "^4.1.5",
+    "tsc-watch": "^4.5.0",
     "typescript": "^4.4.3",
     "unplugin-vue-components": "^0.17.1",
     "vite": "^2.6.4",

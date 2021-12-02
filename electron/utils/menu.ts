@@ -1,7 +1,7 @@
 /*
  * @Author: lx000
  * @Date: 2021-11-05 10:36:13
- * @LastEditTime: 2021-11-19 16:06:07
+ * @LastEditTime: 2021-12-01 11:43:25
  * @Description: 菜单相关配置
  */
 import { Menu, ipcMain, app } from "electron";
@@ -26,7 +26,9 @@ interface menuObj {
  */
 export function onAppMenu() {
   // 渲染进程索取菜单时,如果是windows,返回菜单,如果是macos,返回null
-  ipcMain.handle("getAppMenu", (): menuObj[] | null => (process.platform == "darwin" ? null : getmenu()));
+  ipcMain.handle("getAppMenu", (): menuObj[] | null =>
+    process.platform == "darwin" ? null : getmenu()
+  );
   // ipcMain.handle("getAppMenu", (): menuObj[] | null => getmenu());
   ipcMain.on("MenuClick", (event, menuItemId: string) => {
     const menuItem = Menu.getApplicationMenu()?.getMenuItemById(menuItemId);

@@ -1,7 +1,7 @@
 <!--
  * @Author: lx000
  * @Date: 2021-11-04 10:11:30
- * @LastEditTime: 2021-11-19 11:32:03
+ * @LastEditTime: 2021-12-02 16:00:14
  * @Description: 描述
 -->
 <script setup lang="ts">
@@ -19,11 +19,11 @@
 
   const startColor = computed(() => {
     const [r, g, b] = startOutput.value;
-    return `rgba(${r}, ${g}, ${b},255)`;
+    return `rgb(${r}, ${g}, ${b})`;
   });
   const endColor = computed(() => {
     const [r, g, b] = endOutput.value;
-    return `rgba(${r}, ${g}, ${b},255)`;
+    return `rgb(${r}, ${g}, ${b})`;
   });
 
   watch(

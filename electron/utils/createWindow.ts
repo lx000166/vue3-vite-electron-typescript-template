@@ -1,7 +1,7 @@
 /*
  * @Author: lx000
  * @Date: 2021-11-05 10:21:41
- * @LastEditTime: 2021-11-19 16:07:13
+ * @LastEditTime: 2021-12-02 14:15:14
  * @Description: createWindow
  */
 import { BrowserWindow } from "electron";
@@ -12,7 +12,6 @@ import * as path from "path";
  * 'production'|'development'
  */
 const NODE_ENV = process.env.NODE_ENV;
-
 /** 创建窗口方法 */
 function createWindow() {
   // 生成窗口实例
@@ -42,6 +41,7 @@ function createWindow() {
 
   // * 主窗口加载外部链接
   if (NODE_ENV === "development") Window.loadURL("http://localhost:3920/"); // 开发环境,加载vite启动的vue项目地址
-  if (NODE_ENV !== "development") Window.loadFile(path.join(__dirname, "..", "..", "dist/index.html")); // 生产环境加载打包后文件
+  if (NODE_ENV !== "development")
+    Window.loadFile(path.join(__dirname, "..", "..", "dist/index.html")); // 生产环境加载打包后文件
 }
 export { createWindow };

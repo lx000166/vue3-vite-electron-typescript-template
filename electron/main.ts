@@ -1,7 +1,7 @@
 /*
  * @Author: lx000
  * @Date: 2021-11-04 10:49:02
- * @LastEditTime: 2021-11-19 14:39:46
+ * @LastEditTime: 2021-12-02 09:25:47
  * @Description: electron 主进程
  */
 import { app, BrowserWindow, Menu } from "electron";
