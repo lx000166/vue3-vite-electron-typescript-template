@@ -1,7 +1,7 @@
 <!--
  * @Author: lx000
  * @Date: 2021-11-15 13:35:36
- * @LastEditTime: 2021-11-19 10:41:58
+ * @LastEditTime: 2021-12-02 17:48:07
  * @Description:
 
 -->
@@ -24,7 +24,8 @@
   @import "@/assets/style/routerKeyframes.css";
 
   .main-container {
-    padding-left: var(--sidebar-width);
+    padding-left: var(--sidebar-offect-width);
+    transition: padding-left 0.5s ease;
   }
   .main-wapper {
     padding: var(--nav-height) /* 28px */;

@@ -1,7 +1,7 @@
 <!--
  * @Author: lx000
  * @Date: 2021-11-10 11:36:51
- * @LastEditTime: 2021-12-01 11:29:08
+ * @LastEditTime: 2021-12-02 17:48:41
  * @Description: 描述 
 -->
 <script lang="ts" setup>
@@ -32,7 +32,9 @@
     padding: 2rem 0 2rem 1.25rem;
     box-sizing: border-box;
     width: var(--sidebar-width);
+    left: calc(-15rem + var(--sidebar-offect-width));
     z-index: 10;
+    transition: left 0.5s ease;
 
     .sidebar {
       height: 100%;
