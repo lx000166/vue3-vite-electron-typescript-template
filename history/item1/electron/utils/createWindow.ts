@@ -1,11 +1,10 @@
 /*
  * @Author: lx000
  * @Date: 2021-11-05 10:21:41
- * @LastEditTime: 2021-12-03 09:07:46
+ * @LastEditTime: 2021-12-03 10:37:21
  * @Description: createWindow
  */
 import { BrowserWindow } from "electron";
-// import { setContextMenu } from "./setContextMenu";
 import * as path from "path";
 /**
  * packages.json,script中通过cross-env NODE_ENV=production设置的环境变量
@@ -35,10 +34,6 @@ function createWindow() {
   Window.once("ready-to-show", () => {
     Window.show(); // 显示窗口
   });
-
-  /**设置全局右键菜单 */
-  // setContextMenu(Window);
-
   // * 主窗口加载外部链接
   if (NODE_ENV === "development") Window.loadURL("http://localhost:3920/"); // 开发环境,加载vite启动的vue项目地址
   if (NODE_ENV !== "development")

@@ -6,10 +6,10 @@
   "main": "output/build/main.js",
   "license": "MIT",
   "scripts": {
-    "start": "kill-port 3920 && concurrently -k \"vite\" \"wait-on tcp:3920 && yarn watch\"",
-    "watch": "tsc-watch --noClear -p tsconfig.e.json --onSuccess \"yarn start:ect\"",
+    "start": "kill-port 3920 && concurrently -k \"vite\" \"wait-on tcp:3920 && npm-run-all watch\"",
+    "watch": "tsc-watch --noClear -p tsconfig.e.json --onSuccess \"npm-run-all start:ect\"",
     "start:ect": "cross-env NODE_ENV=development electron ./output/build/main.js",
-    "build": "yarn build:vue && yarn build:tsc && yarn build:all",
+    "build": "npm-run-all build:vue build:tsc build:all",
     "build:vue": "vue-tsc --noEmit && vite build",
     "build:tsc": "tsc -p tsconfig.e.json",
     "build:all": "electron-builder --mac  --windows",
@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "@vueuse/core": "^6.9.0",
-    "animejs": "^3.2.1",
     "echarts": "^5.2.2",
     "normalize.css": "^8.0.1",
     "vue": "^3.2.16",
