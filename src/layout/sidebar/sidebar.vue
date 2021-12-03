@@ -1,7 +1,7 @@
 <!--
  * @Author: lx000
  * @Date: 2021-11-10 11:36:51
- * @LastEditTime: 2021-12-02 17:48:41
+ * @LastEditTime: 2021-12-02 18:03:51
  * @Description: 描述 
 -->
 <script lang="ts" setup>
@@ -55,7 +55,7 @@
         margin-top: 0.5rem;
         border-radius: inherit;
         transition: background-color 0.3s ease;
-        padding: 0.2rem 0 0.3rem 0.75rem;
+        padding: 0.4rem 0 0.5rem 0.75rem;
         i {
           margin-right: 0.75rem;
         }
