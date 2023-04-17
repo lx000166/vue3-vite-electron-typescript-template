@@ -1,0 +1,22 @@
+{
+  "appId": "com.lx000-website.electron-vue3-tpms1",
+  "productName": "后台管理",
+  "copyright": "Copyright © 2021 <your-name>",
+  "directories": {
+    "output": "output/app"
+  },
+  "win": {
+    "icon": "public/cccs.icns",
+    "target": ["nsis", "zip", "7z"]
+  },
+  "files": ["!node_modules", "output/vite/**/*", "output/electron/**/*"],
+  "mac": {
+    "category": "public.app-category.utilitiess2",
+    "icon": "public/cccs.icns",
+    "target": ["dmg"]
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true
+  }
+}

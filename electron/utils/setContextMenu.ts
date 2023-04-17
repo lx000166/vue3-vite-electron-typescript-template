@@ -1,8 +1,8 @@
 /*
  * @Author: lx000
  * @Date: 2021-11-12 10:34:00
- * @LastEditTime: 2021-11-19 14:43:55
- * @Description: 主进程设置右键菜单
+ * @LastEditTime: 2023-04-12 15:35:30
+ * @Description: 主进程设置全局右键菜单
  */
 import { Menu, BrowserWindow } from "electron";
 
@@ -15,9 +15,9 @@ export function setContextMenu(Window: BrowserWindow) {
   const contextMenu = [
     { label: "测试1" },
     {
-      label: "测试2",
+      label: "重载页面",
       click() {
-        console.log("ok");
+        Window.webContents.reloadIgnoringCache();
       }
     },
     {

@@ -1,21 +1,25 @@
 /*
- * @Author: lx000
- * @Date: 2021-11-04 10:11:30
- * @LastEditTime: 2021-11-19 11:56:42
- * @Description: 描述
+ * @Author: lixin
+ * @LastEditors: lixin
+ * @LastEditTime: 2023-04-10 09:26:48
+ * @Description:
  */
 import { createApp } from "vue";
-import router from "@/router/router";
-import App from "./App.vue";
-import Container from "@/components/container.vue";
+import { createPinia } from "pinia";
 
-// ? 样式文件
-import "normalize.css"; // 初始化样式
-import "@/assets/icon/iconfont.css"; // 字体图标
-import "@/assets/style/overall.less"; // 全局样式
-import "@/assets/style/coverAntD.less"; // 覆盖antd样式
+import App from "./App.vue";
+import AppIcon from "@/utils/aliicons"; // * 阿里图标库
+import router from "@/router/router";
+
+import "./style.css";
+import "normalize.css";
+import "virtual:windi.css";
 
 const app = createApp(App);
-app.component("Container", Container);
+
+app.use(createPinia());
 app.use(router);
+
+app.component("AppIcon", AppIcon);
+
 app.mount("#app");

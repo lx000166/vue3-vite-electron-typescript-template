@@ -1,7 +1,7 @@
 /*
  * @Author: lx000
  * @Date: 2021-11-04 10:49:02
- * @LastEditTime: 2021-12-02 09:25:47
+ * @LastEditTime: 2023-03-31 13:44:52
  * @Description: electron 主进程
  */
 import { app, BrowserWindow, Menu } from "electron";
@@ -9,7 +9,8 @@ import { createWindow } from "./utils/createWindow";
 import { onAppMenu, createAppMenu } from "./utils/menu";
 import { onNavbar } from "./utils/navbar";
 import { onContextMenu } from "./utils/contextMenu";
-
+// 屏蔽控制台渲染进程使用不安全的方式加载资源 警告
+process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"] = "true";
 onNavbar();
 onAppMenu();
 onContextMenu();

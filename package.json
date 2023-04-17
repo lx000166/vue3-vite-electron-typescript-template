@@ -1,73 +1,39 @@
 {
-  "name": "vue3-vite-electron-typescript-template",
-  "version": "1.0.3",
-  "description": "vue3,vite,typescript,electron beautiful template",
-  "author": "lx000",
-  "main": "output/build/main.js",
-  "license": "MIT",
+  "name": "vue3-vite-ts-electron-admin",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
   "scripts": {
-    "start": "kill-port 3920 && concurrently -k \"vite\" \"wait-on tcp:3920 && npm-run-all watch\"",
-    "watch": "tsc-watch --noClear -p tsconfig.e.json --onSuccess \"npm-run-all start:ect\"",
-    "start:ect": "cross-env NODE_ENV=development electron ./output/build/main.js",
-    "build": "npm-run-all build:vue build:tsc build:all",
-    "build:vue": "vue-tsc --noEmit && vite build",
-    "build:tsc": "tsc -p tsconfig.e.json",
-    "build:all": "electron-builder --mac  --windows",
-    "build:mac": "electron-builder --mac",
-    "build:win": "electron-builder --windows",
-    "preview": "cross-env NODE_ENV=production electron ./output/build/main.js"
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@vueuse/core": "8.3.1",
+    "@ant-design/icons-vue": "^6.1.0",
+    "@vueuse/core": "^9.13.0",
+    "axios": "^1.3.4",
+    "echarts": "^5.4.2",
+    "less": "^4.1.3",
+    "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
-    "vue": "3.2.33",
-    "vue-router": "4.0.14"
+    "pinia": "^2.0.33",
+    "vue": "^3.2.47",
+    "vue-request": "^2.0.0-rc.4",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "2.3.1",
-    "@vue/compiler-sfc": "3.2.33",
-    "ant-design-vue": "3.2.2",
-    "concurrently": "7.1.0",
-    "cross-env": "7.0.3",
-    "electron": "16.2.5",
-    "electron-builder": "23.1.0",
-    "kill-port": "1.6.1",
-    "less": "4.1.2",
-    "npm-run-all": "4.1.5",
-    "tsc-watch": "5.0.3",
-    "typescript": "4.6.4",
-    "unplugin-vue-components": "0.19.3",
-    "vite": "2.9.5",
-    "vue-tsc": "0.34.10",
-    "wait-on": "6.0.1"
-  },
-  "build": {
-    "appId": "com.lx000-website.electron-vue3-tpm",
-    "productName": "后台管理",
-    "copyright": "Copyright © 2021 <your-name>",
-    "directories": {
-      "output": "output/app"
-    },
-    "win": {
-      "icon": "public/cccs.icns",
-      "target": [
-        "nsis",
-        "zip",
-        "7z"
-      ]
-    },
-    "files": [
-      "!node_modules",
-      "output/dist/**/*",
-      "output/build/**/*"
-    ],
-    "mac": {
-      "category": "public.app-category.utilities",
-      "icon": "public/cccs.icns"
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true
-    }
+    "@vitejs/plugin-vue": "^4.1.0",
+    "electron": "^23.2.0",
+    "electron-builder": "23.6.0",
+    "naive-ui": "^2.34.3",
+    "tsup": "^6.7.0",
+    "typescript": "^4.9.3",
+    "unplugin-auto-import": "^0.15.2",
+    "unplugin-vue-components": "^0.24.1",
+    "vite": "^4.2.0",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vite-plugin-windicss": "^1.8.10",
+    "vue-tsc": "^1.2.0",
+    "windicss": "^3.5.6"
   }
 }

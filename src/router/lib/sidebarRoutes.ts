@@ -1,102 +1,75 @@
 /*
+ * @Author: lixin
+ * @LastEditors: lixin
+ * @LastEditTime: 2023-04-17 10:58:37
+ * @Description:
+ */
+/*
  * @Author: lx000
  * @Date: 2021-11-11 12:08:22
- * @LastEditTime: 2021-11-18 23:11:20
+ * @LastEditTime: 2023-04-12 10:12:40
  * @Description: 描述
  */
 import type { RouteRecordRaw } from "vue-router";
 
-interface metaRequired {
-  /**排序(决定路由过渡滚动方向) */
-  sort: number;
-  /**起始颜色(背景上方颜色) */
-  start: number[];
-  /**结束颜色 (背景下方颜色) */
-  end: number[];
-  /**侧边栏显示名称 */
-  name: string;
-  /**侧边栏图标 */
-  icon: string;
-}
-type customRoute = {
-  /**
-   * @Description `path` 必须使用绝对路径以避免递归路由时的key冲突
-   * @example  路径 path: "/notes" 的子路由使用 path: "/notes/note1" 而不是 path: "note1".
-   */
-  path: `/${string}`;
-  /**
-   * 侧边栏导航通过传递name实现
-   */
-  name: string;
-  /**
-   * @required 必须
-   * @Description 用于切换路由时比对sort大小来动态设置路由切换动画
-   */
-  meta: metaRequired;
-};
-type route = RouteRecordRaw & customRoute;
+type routeItem = PageRouter.Sidebar.CustomRoute & RouteRecordRaw;
+type SidebarRoutes = routeItem[];
 
-const sidebarRoutes: route[] = [
+const sidebarRoutes: SidebarRoutes = [
   {
-    path: "/page1",
-    name: "page1",
+    path: "/home",
+    name: "home",
     meta: {
       sort: 1,
-      start: [170, 74, 106],
-      end: [7, 51, 58],
-      name: "WELCOME",
-      icon: "icon-ts-tubiao_component"
+      name: "首页",
+      icon: "icon-shouye",
+      color: { start: [44, 83, 100], end: [15, 32, 39] }
     },
-    component: () => import("@/view/page-1.vue")
+    component: () => import("@/pages/setting/index.vue")
   },
   {
-    path: "/page2",
-    name: "page2",
+    path: "/course",
+    name: "course",
     meta: {
       sort: 2,
-      start: [61, 81, 80],
-      end: [222, 203, 165],
-      name: "CHART",
-      icon: "icon-chart-line"
+      name: "课程中心",
+      icon: "icon-fenlei"
     },
-    component: () => import("@/view/page-2.vue")
+    component: () => import("@/pages/setting/index.vue")
   },
 
   {
-    path: "/page3",
-    name: "page3",
+    path: "/study",
+    name: "study",
     meta: {
       sort: 3,
-      start: [41, 49, 73],
-      end: [126, 139, 145],
-      name: "笔记",
-      icon: "icon-appstoreadd"
+      name: "我的学习",
+      icon: "icon-shuaxin1",
+      needLogin: true
     },
-    component: () => import("@/view/page-3.vue")
+    component: () => import("@/pages/setting/index.vue")
   },
   {
-    path: "/page4",
-    name: "page4",
+    path: "/attendant",
+    name: "attendant",
     meta: {
       sort: 4,
-      start: [74, 86, 99],
-      end: [225, 95, 96],
-      name: "GitHub",
-      icon: "icon-github"
+      name: "服务中心",
+      icon: "icon-pintuan"
     },
-    component: () => import("@/view/page-4.vue")
+    component: () => import("@/pages/setting/index.vue")
   },
   {
-    path: "/page5",
-    name: "page5",
+    path: "/mars3D",
+    name: "mars3D",
     meta: {
       sort: 5,
-      start: [53, 91, 124],
-      end: [186, 104, 126],
-      name: "设置",
-      icon: "icon-settings"
+      name: "mars3D",
+      icon: "icon-shezhi",
+      // color: { start: [203, 202, 165], end: [51, 77, 80] }
+      color: { start: [187, 210, 197], end: [8, 64, 96] }
     },
-    component: () => import("@/view/page-5.vue")
+    component: () => import("@/pages/mars3D/index.vue")
   }
 ];
 
