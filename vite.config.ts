@@ -1,21 +1,32 @@
-/*
- * @Author: lixin
- * @LastEditors: lixin
- * @LastEditTime: 2023-04-07 09:13:29
- * @Description:
- */
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import path from "path";
 
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
-import { NaiveUiResolver } from "unplugin-vue-components/resolvers";
-// <script setup lang="ts" name="app">
+
+// ? <script setup lang="ts" name="xxx">
 import VueSetupExtend from "vite-plugin-vue-setup-extend";
-import WindiCSS from "vite-plugin-windicss";
 import { electronStart } from "./plugin/vite-plugin-electron/index";
-// https://vitejs.dev/config/
+
+/**
+ * * 示例:自动按需引入naiveUI
+ *    import { NaiveUiResolver,AntDesignVueResolver } from "unplugin-vue-components/resolvers";
+ *    Components({
+ *      ...
+ * +    resolvers: [NaiveUiResolver()],
+ *    }),
+ *
+ *  AutoImport({
+ *    imports: [
+ *     ...
+ *      {
+ *        "naive-ui": ["useDialog", "useMessage", "useNotification", "useLoadingBar"]
+ *      }
+ *    ]
+ *  })
+ */
+
 export default defineConfig({
   base: "./", // * 打包相对路径,否则electron加载index.html时找不到css,js文件
   resolve: {
@@ -28,23 +39,14 @@ export default defineConfig({
   plugins: [
     vue(),
     VueSetupExtend(),
-    WindiCSS(),
     electronStart(),
-    // 自动按需导入组件库
+    // 自动按需导入组件库,自动导入components/*下组件
     Components({
-      resolvers: [NaiveUiResolver()],
       dts: "types/components.d.ts"
     }),
+    // 自动引入
     AutoImport({
-      imports: [
-        "vue",
-        "vue-router",
-        "pinia",
-        "@vueuse/core",
-        {
-          "naive-ui": ["useDialog", "useMessage", "useNotification", "useLoadingBar"]
-        }
-      ],
+      imports: ["vue", "vue-router", "pinia", "@vueuse/core"],
       dts: "types/auto-import.d.ts"
     })
   ]

@@ -1,9 +1,3 @@
-/*
- * @Author: lx000
- * @Date: 2021-11-04 10:49:02
- * @LastEditTime: 2023-03-31 13:44:52
- * @Description: electron 主进程
- */
 import { app, BrowserWindow, Menu } from "electron";
 import { createWindow } from "./utils/createWindow";
 import { onAppMenu, createAppMenu } from "./utils/menu";

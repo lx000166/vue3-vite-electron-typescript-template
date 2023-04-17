@@ -1,9 +1,3 @@
-/*
- * @Author: lx000
- * @Date: 2021-11-05 10:21:41
- * @LastEditTime: 2023-04-12 16:06:20
- * @Description: createWindow
- */
 import { BrowserWindow } from "electron";
 import { setContextMenu } from "./setContextMenu";
 import * as path from "path";

@@ -1,10 +1,3 @@
-/*
- * @Author: lx000
- * @Date: 2021-11-14 15:20:27
- * @LastEditTime: 2023-04-03 17:43:29
- * @Description: 渲染进程点击顶部关闭,最小化...按钮时,调用的方法
- */
-
 import { BrowserWindow, ipcMain } from "electron";
 import { openDevTools, reloadNoCacheWeb, reloadWeb } from "./utils";
 

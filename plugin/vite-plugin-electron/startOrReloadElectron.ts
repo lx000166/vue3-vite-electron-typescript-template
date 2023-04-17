@@ -1,10 +1,3 @@
-/*
- * @Author: lixin
- * @Date: 2022-08-12 16:49:06
- * @LastEditors: lixin
- * @LastEditTime: 2023-03-29 15:27:53
- * @Description: 描述
- */
 import { spawn } from "child_process";
 import electron from "electron";
 import chalk from "chalk";

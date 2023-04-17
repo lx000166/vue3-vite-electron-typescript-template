@@ -9,22 +9,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    GlobalRightClick: typeof import('./../src/components/globalRightClick.vue')['default']
-    Halo: typeof import('./../src/components/halo.vue')['default']
-    Layout: typeof import('./../src/components/Layout/index.vue')['default']
-    Main: typeof import('./../src/components/Layout/components/main.vue')['default']
-    NaiveUiProvider: typeof import('./../src/components/NaiveUiProvider.vue')['default']
-    NavBar: typeof import('./../src/components/Layout/components/navBar.vue')['default']
-    NButton: typeof import('naive-ui')['NButton']
-    NCard: typeof import('naive-ui')['NCard']
-    NConfigProvider: typeof import('naive-ui')['NConfigProvider']
-    NDropdown: typeof import('naive-ui')['NDropdown']
-    NEl: typeof import('naive-ui')['NEl']
-    NMessageProvider: typeof import('naive-ui')['NMessageProvider']
-    RightClickMenu: typeof import('../src/hooks/useRightClick/rightClickMenu.vue')['default']
+    Nav: typeof import('./../src/components/nav.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Sidebar: typeof import('./../src/components/Layout/components/sidebar.vue')['default']
-    TransitionBackground: typeof import('./../src/components/TransitionBackground.vue')['default']
   }
 }

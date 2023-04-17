@@ -1,10 +1,3 @@
-/*
- * @Author: lx000
- * @Date: 2021-11-19 14:02:43
- * @LastEditTime: 2023-03-29 16:11:37
- * @Description: 渲染进程的右键菜单
- */
-
 import { ipcMain, BrowserWindow } from "electron";
 interface Methods {
   [propName: string]: Function;

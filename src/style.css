@@ -1,12 +1,4 @@
-@font-face {
-  font-family: "LongShuHong";
-  src: url("@/assets/font/LongShuHongYiTiXiJian-2.otf") format("truetype");
-}
-
 :root {
-  /* --sidebar-width: 200px; */
-  --nav-height: 24px;
-
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -14,9 +6,6 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   background-color: #242424;
-}
-#app {
-  font-size: 15px;
 }
 /* 可拖动 */
 .drag {
@@ -26,9 +15,4 @@
 /* 不可拖动 */
 .no-drag {
   -webkit-app-region: no-drag;
-}
-.contentCenter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }

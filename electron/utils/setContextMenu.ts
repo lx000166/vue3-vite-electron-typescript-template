@@ -1,9 +1,3 @@
-/*
- * @Author: lx000
- * @Date: 2021-11-12 10:34:00
- * @LastEditTime: 2023-04-12 15:35:30
- * @Description: 主进程设置全局右键菜单
- */
 import { Menu, BrowserWindow } from "electron";
 
 /**

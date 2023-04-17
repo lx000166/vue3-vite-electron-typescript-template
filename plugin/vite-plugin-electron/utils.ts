@@ -1,10 +1,3 @@
-/*
- * @Author: lixin
- * @Date: 2022-08-12 16:50:56
- * @LastEditors: lixin
- * @LastEditTime: 2023-03-29 15:50:42
- * @Description: 描述
- */
 import chalk from "chalk";
 import type { ViteDevServer } from "vite";
 

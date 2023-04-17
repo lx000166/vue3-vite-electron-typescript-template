@@ -1,10 +1,3 @@
-/*
- * @Author: lixin
- * @Date: 2022-08-12 16:31:45
- * @LastEditors: lixin
- * @LastEditTime: 2023-03-29 15:43:03
- * @Description: 描述
- */
 import type { Plugin } from "vite";
 import tsup from "tsup";
 import chalk from "chalk";

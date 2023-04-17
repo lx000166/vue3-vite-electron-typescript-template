@@ -1,9 +1,3 @@
-/*
- * @Author: lx000
- * @Date: 2021-11-05 10:47:11
- * @LastEditTime: 2023-03-29 16:39:35
- * @Description: 工具函数
- */
 import { BrowserWindow, app, session } from "electron";
 
 /**获取被选中(拥有焦点/前台显示)的窗口实例*/

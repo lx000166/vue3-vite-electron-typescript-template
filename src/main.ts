@@ -1,9 +1,3 @@
-/*
- * @Author: lixin
- * @LastEditors: lixin
- * @LastEditTime: 2023-04-10 09:26:48
- * @Description:
- */
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 
@@ -13,7 +7,6 @@ import router from "@/router/router";
 
 import "./style.css";
 import "normalize.css";
-import "virtual:windi.css";
 
 const app = createApp(App);
 

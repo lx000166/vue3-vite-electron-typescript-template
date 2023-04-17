@@ -1,9 +1,3 @@
-/*
- * @Author: lx000
- * @Date: 2021-11-05 10:36:13
- * @LastEditTime: 2021-12-01 11:43:25
- * @Description: 菜单相关配置
- */
 import { Menu, ipcMain, app } from "electron";
 import { openDevTools } from "./utils";
 // getmenu接口

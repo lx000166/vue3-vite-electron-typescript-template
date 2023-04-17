@@ -1,9 +1,3 @@
-/*
- * @Author: lx000
- * @Date: 2021-11-04 10:49:16
- * @LastEditTime: 2021-12-01 11:42:11
- * @Description: preload
- */
 import { contextBridge, ipcRenderer } from "electron";
 
 /**

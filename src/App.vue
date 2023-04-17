@@ -1,16 +1,24 @@
-<!--
- * @Author: lixin
- * @LastEditors: lixin
- * @LastEditTime: 2023-04-11 17:10:34
- * @Description: 
--->
-
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import { useTransitionBackground } from "~h/useTransitionbackground/index";
+  onMounted(() => {
+    useTransitionBackground();
+  });
+</script>
 
 <template>
-  <NaiveUiProvider>
-    <router-view></router-view>
-  </NaiveUiProvider>
+  <div id="app">
+    <Nav />
+    <RouterView />
+  </div>
 </template>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+  #app {
+    --nav-height: 28px;
+    height: 100vh;
+    width: 100vw;
+    padding-top: var(--nav-height);
+    box-sizing: border-box;
+    position: relative;
+  }
+</style>
