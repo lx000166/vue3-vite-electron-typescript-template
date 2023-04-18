@@ -18,5 +18,3 @@ contextBridge.exposeInMainWorld("ipc", {
     ipcRenderer.once(channel, listener);
   }
 });
-
-// contextBridge.exposeInMainWorld('menu', menu)

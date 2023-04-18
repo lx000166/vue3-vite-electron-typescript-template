@@ -1,7 +1,20 @@
 import type { RouteRecordRaw } from "vue-router";
 import { createRouter, createWebHashHistory, Router } from "vue-router";
 
-const routes: RouteRecordRaw[] = [
+interface CustomRoute {
+  meta?: {
+    /**
+     * 背景渐变
+     * {undefined} 随机
+     * {TransitionBG.RandomColorItem} 固定
+     * @type {TransitionBG.colorParams}
+     */
+    color?: TransitionBG.RandomColorItem;
+  };
+}
+type routeItem = CustomRoute & RouteRecordRaw;
+
+const routes: routeItem[] = [
   { path: "/", redirect: "/page1" },
   {
     path: "/page1",
@@ -13,7 +26,10 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: "/page3",
-    component: () => import("@/pages/page-3.vue")
+    component: () => import("@/pages/page-3.vue"),
+    meta: {
+      color: { start: [187, 210, 197], end: [8, 64, 96] }
+    }
   }
 ];
 

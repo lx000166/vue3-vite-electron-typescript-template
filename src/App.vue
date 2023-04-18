@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { useTransitionBackground } from "~h/useTransitionbackground/index";
+  import { useTransitionBackground } from "@/hooks/useTransitionBG";
   onMounted(() => {
     useTransitionBackground();
   });

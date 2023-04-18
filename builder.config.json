@@ -1,18 +1,18 @@
 {
-  "appId": "com.lx000-website.electron-vue3-tpms1",
-  "productName": "后台管理",
-  "copyright": "Copyright © 2021 <your-name>",
+  "appId": "com.lx000-website.electron-vue3-tpm",
+  "productName": "应用模板",
+  "copyright": "Copyright © 2023 <lx>",
   "directories": {
     "output": "output/app"
   },
   "win": {
-    "icon": "public/cccs.icns",
+    "icon": "public/appIcon.icns",
     "target": ["nsis", "zip", "7z"]
   },
   "files": ["!node_modules", "output/vite/**/*", "output/electron/**/*"],
   "mac": {
-    "category": "public.app-category.utilitiess2",
-    "icon": "public/cccs.icns",
+    "category": "public.app-category.electron-vue3-tpm",
+    "icon": "public/appIcon.icns",
     "target": ["dmg"]
   },
   "nsis": {

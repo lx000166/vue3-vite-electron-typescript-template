@@ -1,5 +1,11 @@
+/*
+ * @Date: 2023-04-17 15:36:45
+ * @LastEditors: lixin
+ * @LastEditTime: 2023-04-18 13:21:01
+ * @Description:
+ */
 import { BrowserWindow } from "electron";
-import { setContextMenu } from "./setContextMenu";
+import { mainContextMenu } from "./mainContextMenu";
 import * as path from "path";
 
 const NODE_ENV = process.env.NODE_ENV;
@@ -37,7 +43,7 @@ function createWindow() {
   });
 
   /**设置全局右键菜单 */
-  setContextMenu(Window);
+  mainContextMenu(Window);
 
   // * 主窗口加载外部链接
   if (NODE_ENV === "dev") Window.loadURL(process.env.LoadUrl as string); // 开发环境,加载vite启动的vue项目地址

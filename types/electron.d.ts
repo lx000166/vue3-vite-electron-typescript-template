@@ -1,12 +1,13 @@
 // ? 扩展window对象
 interface Window {
-  /** NodeJs fs */
-  fs: typeof import("fs");
   /** Electron ipcRenderer  electron\preload.ts 中向window上挂载的通信方法 */
   ipc: import("electron").IpcRenderer;
 }
 
 declare namespace NodeJS {
+  /**
+   * plugin\vite-plugin-electron\startOrReloadElectron.ts
+   */
   interface Process {
     electronProcess: import("child_process").ChildProcessWithoutNullStreams | null;
   }
@@ -19,4 +20,16 @@ declare namespace Electron {
   interface WindowEvent {
     sender: BrowserWindow;
   }
+  interface BrowserWindow {
+    isMax?: boolean | null;
+  }
+}
+declare namespace ElectronPriv {
+  interface MenuObj {
+    lable: string;
+    id: string;
+    type: string;
+    child: Menu | null;
+  }
+  type Menu = MenuObj[];
 }

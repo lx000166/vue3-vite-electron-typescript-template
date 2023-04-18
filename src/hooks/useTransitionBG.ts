@@ -7,7 +7,10 @@ const randomColor: TransitionBG.RandomColor = [
   { start: [25, 84, 123], end: [255, 216, 155] },
   { start: [253, 116, 108], end: [44, 62, 80] }
 ];
-const getRandom = (key: "start" | "end") => randomColor[random(0, randomColor.length - 1)][key];
+/**
+ * @description 从{randomColor}中随机取一项设置为背景色
+ */
+const getRandom = () => randomColor[random(0, randomColor.length - 1)];
 
 /** hooks */
 export const useTransitionBackground = () => {
@@ -34,20 +37,30 @@ export const useTransitionBackground = () => {
       start.value = metaColor.start;
       end.value = metaColor.end;
     } else {
-      start.value = getRandom("start");
-      end.value = getRandom("end");
+      const { start: s, end: e } = getRandom();
+      start.value = s;
+      end.value = e;
     }
   };
+
+  /**
+   * 将变量添加到{#app}
+   */
   const bg = "linear-gradient(45deg, var(--start-transition-color), var(--end-transition-color))";
   document.getElementById("app")?.style.setProperty("background", bg);
-  // 设置渐变色 用于背景等过渡
+
+  /**
+   * 每当value值变化时,设置css变量
+   */
   watchEffect(() => {
     document.querySelector("html")?.style.setProperty("--start-transition-color", startColor.value);
     document.querySelector("html")?.style.setProperty("--end-transition-color", endColor.value);
   });
+  /**
+   * 路由后置狗子,当路由变化时,取meta.color的值.如果没有值,取{randomColor}中的随机颜色值设置为背景色
+   */
   router.afterEach((to, form) => {
-    console.log(to.path);
-
+    if (to.path === form.path) return;
     setColor(to.meta?.color as TransitionBG.colorParams);
   });
 };

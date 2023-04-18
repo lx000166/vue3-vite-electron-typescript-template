@@ -1,12 +1,12 @@
-import { Menu, ipcMain, app } from "electron";
+/*
+ * @Date: 2023-04-17 15:36:45
+ * @LastEditors: lixin
+ * @LastEditTime: 2023-04-18 11:04:36
+ * @Description:
+ */
+import { Menu, ipcMain } from "electron";
 import { openDevTools } from "./utils";
-// getmenu接口
-interface menuObj {
-  lable: string;
-  id: string;
-  type: string;
-  child: menuObj[] | null;
-}
+
 /**
  * 自定义顶部menu会导致默认的几个菜单消失 (如view,window等..)
  * 如需添加,设置sunmenu[x].role = xxx 即可
@@ -20,7 +20,7 @@ interface menuObj {
  */
 export function onAppMenu() {
   // 渲染进程索取菜单时,如果是windows,返回菜单,如果是macos,返回null
-  ipcMain.handle("getAppMenu", (): menuObj[] | null =>
+  ipcMain.handle("getAppMenu", (): ElectronPriv.Menu | null =>
     process.platform == "darwin" ? null : getmenu()
   );
   // ipcMain.handle("getAppMenu", (): menuObj[] | null => getmenu());
@@ -83,13 +83,12 @@ export function createAppMenu() {
 
 /**
  * @description 递归生成菜单数组,数组传递给渲染进程用于生成windows上左上角菜单栏
- * @returns {menuObj}  menuArr:{ lable: string, id: string, type: string, child?: menuObj[] }
  */
 function getmenu() {
   function menu(ims: Electron.MenuItem[]) {
-    let menuArr: menuObj[] = [];
+    let menuArr: ElectronPriv.Menu = [];
     ims.map((im) => {
-      let menuObj: menuObj = {
+      let menuObj: ElectronPriv.MenuObj = {
         lable: im.label,
         id: im.id,
         type: im.type,

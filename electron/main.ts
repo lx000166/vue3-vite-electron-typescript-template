@@ -1,13 +1,22 @@
+/*
+ * @Date: 2023-04-17 15:36:45
+ * @LastEditors: lixin
+ * @LastEditTime: 2023-04-18 13:22:03
+ * @Description:
+ */
 import { app, BrowserWindow, Menu } from "electron";
 import { createWindow } from "./utils/createWindow";
 import { onAppMenu, createAppMenu } from "./utils/menu";
 import { onNavbar } from "./utils/navbar";
-import { onContextMenu } from "./utils/contextMenu";
+import { onRenderContextMenu } from "./utils/renderContextMenu";
+
 // 屏蔽控制台渲染进程使用不安全的方式加载资源 警告
 process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"] = "true";
+
 onNavbar();
 onAppMenu();
-onContextMenu();
+onRenderContextMenu();
+
 app.on("ready", () => {
   // 设置app菜单
   Menu.setApplicationMenu(createAppMenu());

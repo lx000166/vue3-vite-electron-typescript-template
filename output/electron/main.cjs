@@ -28,9 +28,9 @@ var import_electron7 = require("electron");
 // electron/utils/createWindow.ts
 var import_electron2 = require("electron");
 
-// electron/utils/setContextMenu.ts
+// electron/utils/mainContextMenu.ts
 var import_electron = require("electron");
-function setContextMenu(Window) {
+function mainContextMenu(Window) {
   const contextMenu = [
     { label: "\u6D4B\u8BD51" },
     {
@@ -87,7 +87,7 @@ function createWindow() {
       event.sender.setResizable(false);
     }, 1);
   });
-  setContextMenu(Window);
+  mainContextMenu(Window);
   if (NODE_ENV === "dev")
     Window.loadURL(process.env.LoadUrl);
   if (NODE_ENV !== "dev")
@@ -219,9 +219,9 @@ function onNavbar() {
   });
 }
 
-// electron/utils/contextMenu.ts
+// electron/utils/renderContextMenu.ts
 var import_electron6 = require("electron");
-function onContextMenu() {
+function onRenderContextMenu() {
   import_electron6.ipcMain.on("contentMenu", (event, key) => {
     methods[key] && methods[key](event);
   });
@@ -230,7 +230,7 @@ var openDevTool = (e) => e.sender.openDevTools();
 var reloadIgnoringCache = (e) => {
   e.sender.reloadIgnoringCache();
 };
-var fullScreen = async (e) => {
+var fullScreen = (e) => {
   const window = import_electron6.BrowserWindow.fromWebContents(e.sender);
   const isMac = process.platform == "darwin";
   if (isMac) {
@@ -251,7 +251,7 @@ var methods = {
 process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"] = "true";
 onNavbar();
 onAppMenu();
-onContextMenu();
+onRenderContextMenu();
 import_electron7.app.on("ready", () => {
   import_electron7.Menu.setApplicationMenu(createAppMenu());
   createWindow();
