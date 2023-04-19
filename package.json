@@ -1,12 +1,15 @@
 {
   "name": "vue3-vite-ts-electron-template",
   "private": true,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
+  "main": "output/electron/main.cjs",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "start": "vite",
+    "build:win": "vue-tsc && vite build && electron-builder -w",
+    "build:mac": "vue-tsc && vite build && electron-builder -m",
+    "build:prev": "vue-tsc && vite build",
+    "preview": "electron output/electron/main.cjs"
   },
   "dependencies": {
     "@ant-design/icons-vue": "^6.1.0",

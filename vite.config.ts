@@ -1,3 +1,9 @@
+/*
+ * @Date: 2023-04-17 15:36:45
+ * @LastEditors: lixin
+ * @LastEditTime: 2023-04-18 17:15:36
+ * @Description:
+ */
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import path from "path";
@@ -39,7 +45,9 @@ export default defineConfig({
   plugins: [
     vue(),
     VueSetupExtend(),
-    electronStart(),
+    electronStart({
+      target: "win"
+    }),
     // 自动按需导入组件库,自动导入components/*下组件
     Components({
       dts: "types/components.d.ts"
@@ -49,5 +57,8 @@ export default defineConfig({
       imports: ["vue", "vue-router", "pinia", "@vueuse/core"],
       dts: "types/auto-import.d.ts"
     })
-  ]
+  ],
+  build: {
+    outDir: "output/vite" // 打包输出文件路径
+  }
 });

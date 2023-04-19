@@ -88,9 +88,9 @@ function createWindow() {
     }, 1);
   });
   mainContextMenu(Window);
-  if (NODE_ENV === "dev")
+  if (NODE_ENV === "development")
     Window.loadURL(process.env.LoadUrl);
-  if (NODE_ENV !== "dev")
+  if (NODE_ENV !== "development")
     Window.loadFile(path.join(__dirname, "..", "vite/index.html"));
 }
 
@@ -99,6 +99,7 @@ var import_electron4 = require("electron");
 
 // electron/utils/utils.ts
 var import_electron3 = require("electron");
+var import_path = __toESM(require("path"), 1);
 function getfocusWindow() {
   return import_electron3.BrowserWindow.getFocusedWindow();
 }
@@ -113,6 +114,16 @@ function reloadWeb() {
 function reloadNoCacheWeb() {
   var _a;
   (_a = getfocusWindow()) == null ? void 0 : _a.webContents.reloadIgnoringCache();
+}
+function loadVueDevTools() {
+  const NODE_ENV2 = process.env.NODE_ENV;
+  if (NODE_ENV2 === "development")
+    try {
+      import_electron3.session.defaultSession.loadExtension(
+        import_path.default.resolve(__dirname, "../../extension/vueDevTools-6.5.0_0")
+      );
+    } catch (error) {
+    }
 }
 
 // electron/utils/menu.ts
@@ -252,9 +263,10 @@ process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"] = "true";
 onNavbar();
 onAppMenu();
 onRenderContextMenu();
-import_electron7.app.on("ready", () => {
+import_electron7.app.whenReady().then(() => {
   import_electron7.Menu.setApplicationMenu(createAppMenu());
   createWindow();
+  loadVueDevTools();
   import_electron7.app.on("activate", () => import_electron7.BrowserWindow.getAllWindows().length === 0 && createWindow());
 });
 import_electron7.app.on("window-all-closed", () => {

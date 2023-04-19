@@ -7,7 +7,7 @@
   },
   "win": {
     "icon": "public/appIcon.icns",
-    "target": ["nsis", "zip", "7z"]
+    "target": ["7z"]
   },
   "files": ["!node_modules", "output/vite/**/*", "output/electron/**/*"],
   "mac": {

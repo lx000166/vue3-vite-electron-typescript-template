@@ -1,10 +1,10 @@
 /*
  * @Date: 2023-04-17 15:36:45
  * @LastEditors: lixin
- * @LastEditTime: 2023-04-18 13:21:01
+ * @LastEditTime: 2023-04-19 10:17:56
  * @Description:
  */
-import { BrowserWindow } from "electron";
+import { BrowserWindow, webContents } from "electron";
 import { mainContextMenu } from "./mainContextMenu";
 import * as path from "path";
 
@@ -46,7 +46,7 @@ function createWindow() {
   mainContextMenu(Window);
 
   // * 主窗口加载外部链接
-  if (NODE_ENV === "dev") Window.loadURL(process.env.LoadUrl as string); // 开发环境,加载vite启动的vue项目地址
-  if (NODE_ENV !== "dev") Window.loadFile(path.join(__dirname, "..", "vite/index.html")); // 生产环境加载打包后文件
+  if (NODE_ENV === "development") Window.loadURL(process.env.LoadUrl as string); // 开发环境,加载vite启动的vue项目地址
+  if (NODE_ENV !== "development") Window.loadFile(path.join(__dirname, "..", "vite/index.html")); // 生产环境加载打包后文件
 }
 export { createWindow };
