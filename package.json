@@ -23,7 +23,9 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.194",
     "@vitejs/plugin-vue": "^4.1.0",
+    "chalk": "^5.2.0",
     "electron": "^24.1.2",
     "electron-builder": "23.6.0",
     "tsup": "^6.7.0",
